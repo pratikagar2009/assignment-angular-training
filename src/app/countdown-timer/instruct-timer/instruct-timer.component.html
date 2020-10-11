@@ -1,0 +1,13 @@
+<div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Enter Timer Limit:</span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)]="timerLimit" >
+      </div>
+    
+      <p style="font-size: 0.28cm;"><i>*Enter the timer Limit and click on reset. Start the timer and pause whenever needed.</i></p>
+
+    <button type="button" class="btn btn-secondary" style="margin:5px;" (click)="onStartPauseClick()">Start/Pause</button> 
+    <button type="button" class="btn btn-secondary" style="margin:5px;" (click)="onResetClick(timerLimit)">Reset</button>
+    <hr>
+

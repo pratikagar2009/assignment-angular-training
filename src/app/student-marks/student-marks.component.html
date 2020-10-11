@@ -1,0 +1,25 @@
+<h2>Student marks table</h2>
+
+<h5 *ngIf = "isFetching">Loading.....</h5>
+
+<table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <!-- <th [class.active]="order === 'Name'" (click)="setOrder('Name')" scope="col">Name <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span></th> -->
+        <th (click)="setOrder('Name')" scope="col">Name <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span></th>
+        <th (click)="setOrder('Class')" scope="col">Class <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span></th>
+        <th (click)="setOrder('Section')" scope="col">Section <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span></th>
+        <th (click)="setOrder('Maths')" scope="col">Maths <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span></th>
+        <th (click)="setOrder('Computer')" scope="col">Computer <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let studentRecord of studentRecords | orderBy: order:reverse:'case-insensitive'">
+        <th scope="row">{{ studentRecord.Name }}</th>
+        <td>{{ studentRecord.Class }}</td>
+        <td>{{ studentRecord.Section }}</td>
+        <td>{{ studentRecord.Maths }}</td>
+        <td>{{ studentRecord.Computer }}</td>
+      </tr>
+    </tbody>
+  </table>
